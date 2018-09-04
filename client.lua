@@ -258,6 +258,9 @@ end
 
 RegisterNetEvent("stopRace")
 AddEventHandler("stopRace", function()
+    TriggerEvent("chatMessage", "Server", {0,0,0}, string.format("Race stopped"))
+    FreezeEntityPosition(GetVehiclePedIsUsing(GetPlayerPed(-1)), false) --Unfreeze Entity
+    setcountdown(0)
     PlaySoundFrontend(-1, "ScreenFlash", "WastedSounds")
     DeleteCheckpoint(checkpoint)
     RemoveBlip(blip)
