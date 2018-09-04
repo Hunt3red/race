@@ -117,16 +117,22 @@ AddEventHandler("cRace:JoinRace", function(host)
         while getcountdown() > 0 do
             Citizen.Wait(1)
             SetTextComponentFormat('STRING')
-	    AddTextComponentString("Press ~INPUT_PICKUP~ to join " .. host .. "'s race! " .. getcountdown())
+	    AddTextComponentString("Press ~INPUT_PICKUP~ to join " .. host .. "'s race: " .. getcountdown())
 	    DisplayHelpTextFromStringLabel(0, 0, 1, -1)
-                if (IsControlJustReleased(1, 38)) then
-                    if IsRacing == false then
-                        IsRacing = true
-                        TriggerEvent("cRace:PreRace")
-                    else
-                        return
-                    end
-                end
+            if IsRacing == false then
+		if (IsControlJustReleased(1, 38)) then
+		    IsRacing = true
+		    TriggerEvent("cRace:PreRace")
+		else
+		    if IsRacing == true then
+			TriggerEvent("cRace:PreRace")
+		    end
+		end
+	    else
+		if IsRacing == true then
+		    TriggerEvent("cRace:PreRace")
+		end
+	    end
         end
         if IsRacing == true then
             TriggerEvent("cRace:TPAll")
