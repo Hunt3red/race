@@ -5,11 +5,11 @@ function LocalPed()
 	return GetPlayerPed(-1)
 end
 
-local startPoint = {x = 2452.0422363281, y = 4584.0, z = 37.0}
+local startPoint = {x = 2452.04, y = 4584.01, z = 37.01}
 
 --Edit the xyz coords of this blip to change the starting line for the race
 local blips = {
-    {title="Jagger", colour=5, id=315, x= startPoint.x, y= startPoint.y, z= startPoint.z}
+    {title="Race", colour=5, id=315, x= startPoint.x, y= startPoint.y, z= startPoint.z}
 }
 
 
@@ -35,42 +35,42 @@ end
 
 local CheckPoints = {}
 
-CheckPoints[1] = {x = 2359.6828613281,y = 4681.8369140625,z = 38.294208526611, type = 5}
-CheckPoints[2] = {x = 2024.4761962891,y = 4622.0478515625,z = 42.496269226074, type = 5}
-CheckPoints[3] = {x = 1758.7360839844,y = 4575.2133789063,z = 37.806930541992, type = 5}
-CheckPoints[4] = {x = 1695.5875244141,y = 4658.6010742188,z = 42.754390716553, type = 5}
-CheckPoints[5] = {x = 1667.4906005859,y = 4932.4643554688,z = 41.370155334473, type = 5}
-CheckPoints[6] = {x = 1822.0274658203,y = 5067.0131835938,z = 57.311798095703, type = 5}
-CheckPoints[7] = {x = 1988.0649414063,y = 5151.0913085938,z = 44.161609649658, type = 9}
-CheckPoints[8] = {x = 2133.287109375,y = 5225.6987304688,z = 57.853595733643, type = 5}
-CheckPoints[9] = {x = 2299.6638183594,y = 5187.1000976563,z = 59.099498748779, type = 5}
-CheckPoints[10] = {x = 2366.2592773438,y = 5225.7915039063,z = 57.961486816406, type = 5}
-CheckPoints[11] = {x = 2392.0808105469,y = 5082.7690429688,z = 54.411712646484, type = 5}
-CheckPoints[12] = {x = 2390.0864257813,y = 4925.6455078125,z = 56.390571594238, type = 5}
-CheckPoints[13] = {x = 2256.7502441406,y = 4905.0639648438,z = 53.033596038818, type = 5}
-CheckPoints[14] = {x = 2195.3146972656,y = 4743.328125,z = 40.151760101318, type = 5}
-CheckPoints[15] = {x = 2316.7524414063,y = 4744.4067382813,z = 49.53540802002, type = 5}
-CheckPoints[16] = {x = 2206.08984375,y = 4825.6743164063,z = 39.431991577148, type = 5}
-CheckPoints[17] = {x = 2214.5959472656,y = 4954.9482421875,z = 40.628261566162, type = 5}
-CheckPoints[18] = {x = 2394.3962402344,y = 5140.9794921875,z = 46.695999145508, type = 5}
-CheckPoints[19] = {x = 2526.111328125,y = 5088.208984375,z = 43.294586181641, type = 5}
-CheckPoints[20] = {x = 2641.6149902344,y = 5128.908203125,z = 45.553276062012, type = 5}
-CheckPoints[21] = {x = 2723.5100097656,y = 5114.140625,z = 43.336578369141, type = 5}
-CheckPoints[22] = {x = 2770.0187988281,y = 4976.7670898438,z = 32.976810455322, type = 5}
-CheckPoints[23] = {x = 2843.1066894531,y = 4814.6484375,z = 47.802055358887, type = 5}
-CheckPoints[24] = {x = 2883.1142578125,y = 4745.1733398438,z = 47.964672088623, type = 5}
-CheckPoints[25] = {x = 2969.4130859375,y = 4672.650390625,z = 51.371353149414, type = 5}
-CheckPoints[26] = {x = 2970.2509765625,y = 4486.1220703125,z = 45.883026123047, type = 5}
-CheckPoints[27] = {x = 2798.4643554688,y = 4410.2724609375,z = 48.173229217529, type = 5}
-CheckPoints[28] = {x = 2730.2138671875,y = 4594.5346679688,z = 44.446239471436, type = 5}
-CheckPoints[29] = {x = 2709.1586914063,y = 4754.482421875,z = 43.631923675537, type = 5}
-CheckPoints[30] = {x = 2674.3056640625,y = 4967.4633789063,z = 44.019496917725, type = 5}
-CheckPoints[31] = {x = 2624.7541503906,y = 5109.1694335938,z = 44.095062255859, type = 5}
-CheckPoints[32] = {x = 2660.9526367188,y = 4910.744140625,z = 43.981155395508, type = 5}
-CheckPoints[33] = {x = 2748.9262695313,y = 4769.2407226563,z = 51.226440429688, type = 5}
-CheckPoints[34] = {x = 2688.7775878906,y = 4844.0454101563,z = 32.93334197998, type = 5}
-CheckPoints[35] = {x = 2457.6501464844,y = 4613.25,z = 36.130588531494, type = 5}
-CheckPoints[36] = {x = 2445.5249023438, y = 4601.2626953125, z = 36.481945037842, type = 9}
+CheckPoints[1] = {x = 2359.68,y = 4681.83,z = 38.29, type = 5}
+CheckPoints[2] = {x = 2024.47,y = 4622.04,z = 42.49, type = 5}
+CheckPoints[3] = {x = 1758.73,y = 4575.21,z = 37.80, type = 5}
+CheckPoints[4] = {x = 1695.58,y = 4658.60,z = 42.75, type = 5}
+CheckPoints[5] = {x = 1667.49,y = 4932.46,z = 41.37, type = 5}
+CheckPoints[6] = {x = 1822.02,y = 5067.01,z = 57.31, type = 5}
+CheckPoints[7] = {x = 1988.06,y = 5151.09,z = 44.16, type = 9}
+CheckPoints[8] = {x = 2133.28,y = 5225.69,z = 57.85, type = 5}
+CheckPoints[9] = {x = 2299.66,y = 5187.10,z = 59.09, type = 5}
+CheckPoints[10] = {x = 2366.25,y = 5225.79,z = 57.96, type = 5}
+CheckPoints[11] = {x = 2392.08,y = 5082.76,z = 54.41, type = 5}
+CheckPoints[12] = {x = 2390.08,y = 4925.64,z = 56.39, type = 5}
+CheckPoints[13] = {x = 2256.75,y = 4905.06,z = 53.03, type = 5}
+CheckPoints[14] = {x = 2195.31,y = 4743.32,z = 40.15, type = 5}
+CheckPoints[15] = {x = 2316.75,y = 4744.40,z = 49.53, type = 5}
+CheckPoints[16] = {x = 2206.08,y = 4825.67,z = 39.43, type = 5}
+CheckPoints[17] = {x = 2214.59,y = 4954.94,z = 40.62, type = 5}
+CheckPoints[18] = {x = 2394.39,y = 5140.97,z = 46.69, type = 5}
+CheckPoints[19] = {x = 2526.11,y = 5088.20,z = 43.29, type = 5}
+CheckPoints[20] = {x = 2641.61,y = 5128.90,z = 45.55, type = 5}
+CheckPoints[21] = {x = 2723.51,y = 5114.14,z = 43.33, type = 5}
+CheckPoints[22] = {x = 2770.01,y = 4976.76,z = 32.97, type = 5}
+CheckPoints[23] = {x = 2843.10,y = 4814.64,z = 47.80, type = 5}
+CheckPoints[24] = {x = 2883.11,y = 4745.17,z = 47.96, type = 5}
+CheckPoints[25] = {x = 2969.41,y = 4672.65,z = 51.37, type = 5}
+CheckPoints[26] = {x = 2970.25,y = 4486.12,z = 45.88, type = 5}
+CheckPoints[27] = {x = 2798.46,y = 4410.27,z = 48.17, type = 5}
+CheckPoints[28] = {x = 2730.21,y = 4594.53,z = 44.44, type = 5}
+CheckPoints[29] = {x = 2709.15,y = 4754.48,z = 43.63, type = 5}
+CheckPoints[30] = {x = 2674.30,y = 4967.46,z = 44.01, type = 5}
+CheckPoints[31] = {x = 2624.75,y = 5109.16,z = 44.09, type = 5}
+CheckPoints[32] = {x = 2660.95,y = 4910.74,z = 43.98, type = 5}
+CheckPoints[33] = {x = 2748.92,y = 4769.24,z = 51.22, type = 5}
+CheckPoints[34] = {x = 2688.77,y = 4844.04,z = 32.93, type = 5}
+CheckPoints[35] = {x = 2457.65,y = 4613.25,z = 36.13, type = 5}
+CheckPoints[36] = {x = 2445.52,y = 4601.26,z = 36.48, type = 9}
 
 
 Citizen.CreateThread(function()
@@ -82,7 +82,7 @@ function raceInit()
         Citizen.Wait(0)
             DrawMarker(1, startPoint.x, startPoint.y, startPoint.z - 1, 0, 0, 0, 0, 0, 0, 3.0001, 3.0001, 1.5001, 255, 165, 0,165, 0, 0, 0,0) 
         if GetDistanceBetweenCoords( startPoint.x, startPoint.y, startPoint.z, GetEntityCoords(LocalPed())) < 50.0 then
-            	Draw3DText( startPoint.x, startPoint.y, startPoint.z  +.500, "Jagger",7,0.3,0.2)
+            	Draw3DText( startPoint.x, startPoint.y, startPoint.z  +.500, "Mountain",7,0.3,0.2)
             	Draw3DText( startPoint.x, startPoint.y, startPoint.z  +.100, "Race",7,0.3,0.2)
         end
         if GetDistanceBetweenCoords( startPoint.x, startPoint.y, startPoint.z, GetEntityCoords(LocalPed())) < 2.0 then
