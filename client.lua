@@ -1,6 +1,3 @@
---Pringus race script (probably more accurately a time trial script)
---todo: add laps, placements, spawn positions, time conversion, option to join
-
 function LocalPed()
 	return GetPlayerPed(-1)
 end
@@ -85,8 +82,10 @@ function raceInit()
             	Draw3DText( startPoint.x, startPoint.y, startPoint.z  +.500, "Mountain",7,0.3,0.2)
             	Draw3DText( startPoint.x, startPoint.y, startPoint.z  +.100, "Race",7,0.3,0.2)
         end
-        if GetDistanceBetweenCoords( startPoint.x, startPoint.y, startPoint.z, GetEntityCoords(LocalPed())) < 2.0 then
-            TriggerEvent("fs_freemode:displayHelp", "Press ~INPUT_CONTEXT~ to Race!")
+        if GetDistanceBetweenCoords( startPoint.x, startPoint.y, startPoint.z, GetEntityCoords(LocalPed())) < 3.0 then
+            SetTextComponentFormat('STRING')
+	    AddTextComponentString("Press ~INPUT_PICKUP~ to race!")
+	    DisplayHelpTextFromStringLabel(0, 0, 1, -1)
             if (IsControlJustReleased(1, 38)) then
                 if IsRacing == false then
                     IsRacing = true
@@ -114,7 +113,9 @@ AddEventHandler("cRace:JoinRace", function(host)
         
         while getcountdown() > 0 do
             Citizen.Wait(1)
-            TriggerEvent("fs_freemode:displayHelp", "Press ~INPUT_CONTEXT~ to join " .. host .. "'s race! " .. getcountdown())
+            SetTextComponentFormat('STRING')
+	    AddTextComponentString("Press ~INPUT_PICKUP~ to join " .. host .. "'s race! " .. getcountdown())
+	    DisplayHelpTextFromStringLabel(0, 0, 1, -1)
                 if (IsControlJustReleased(1, 38)) then
                     if IsRacing == false then
                         IsRacing = true
