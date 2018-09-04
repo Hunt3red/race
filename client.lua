@@ -199,8 +199,10 @@ AddEventHandler("cRace:BeginRace", function(cP, cP2)
                         DeleteCheckpoint(checkpoint)
                         RemoveBlip(blip)
                         PlaySoundFrontend(-1, "RACE_PLACED", "HUD_AWARDS")
-                        cP = math.ceil(cP+1)
-                        cP2 = math.ceil(cP2+1)
+                        cP = cP + 1
+			if(CheckPoints[cP].type == 5) then
+			    cP2 = cP2+1
+			end
                         checkpoint = CreateCheckpoint(CheckPoints[cP].type, CheckPoints[cP].x,  CheckPoints[cP].y,  CheckPoints[cP].z + 2, CheckPoints[cP2].x, CheckPoints[cP2].y, CheckPoints[cP2].z, 8.0, 204, 204, 1, 100, 0)
                         blip = AddBlipForCoord(CheckPoints[cP].x, CheckPoints[cP].y, CheckPoints[cP].z)
                     else
