@@ -32,18 +32,6 @@ for i = 1,32 do
 end
 
 
---[[
-
-Add checkpoints using the formatting:
-CheckPoints[1] =  	{ x = 0, y = 0, z = 0, type = 5}
-Number in brackets is the number of the checkpoint (CheckPoints[1] would be the first 
-checkpoint in the race)
-Change the checkpoint type to determine whether or not it will be a checkpoint or
-the finish line. type = 5 for regular checkpoints, type = 9 for the finish.
-
-The example race is in North Yankton.
-
-]]
 
 local CheckPoints = {}
 
@@ -84,22 +72,6 @@ CheckPoints[34] = {x = 2688.7775878906,y = 4844.0454101563,z = 32.93334197998, t
 CheckPoints[35] = {x = 2457.6501464844,y = 4613.25,z = 36.130588531494, type = 5}
 CheckPoints[36] = {x = 2445.5249023438, y = 4601.2626953125, z = 36.481945037842, type = 9}
 
-
---[[CheckPoints[1] =  	{ x = 3193.48, y = -4833.70, z = 111.10, type = 5}
-CheckPoints[2] =	{ x = 3220.04, y = -4723.66, z = 111.59, type = 5}
-CheckPoints[3] =	{ x = 3259.36, y = -4683.49, z = 112.09, type = 5}
-CheckPoints[4] =	{ x = 3213.41, y = -4788.37, z = 111.09, type = 5}
-CheckPoints[5] =	{ x = 3273.93, y = -4842.86, z = 111.08, type = 5}
-CheckPoints[6] =	{ x = 3448.06, y = -4860.14, z = 111.06, type = 5}
-CheckPoints[7] =	{ x = 3512.24, y = -4863.06, z = 110.98, type = 5}
-CheckPoints[8] =	{ x = 3536.23, y = -4734.19, z = 111.84, type = 5}
-CheckPoints[9] =	{ x = 3535.28, y = -4676.86, z = 113.47, type = 5}
-CheckPoints[10] =  	{ x = 3493.69, y = -4660.35, z = 114.08, type = 5}
-CheckPoints[11] =  	{ x = 3296.20, y = -4614.22, z = 115.23, type = 5}
-CheckPoints[12] =  	{ x = 3241.98, y = -4617.21, z = 115.14, type = 5}
-CheckPoints[13] =	{ x = 3236.97, y = -4655.57, z = 113.90, type = 5}
-CheckPoints[14] =  	{ x = 3243.55, y = -4682.48, z = 112.04, type = 5}
-CheckPoints[15] =  	{ x = 3210.94, y = -4817.35, z = 111.09, type = 9}]]
 
 Citizen.CreateThread(function()
     raceInit()
@@ -164,21 +136,19 @@ AddEventHandler("cRace:PreRace", function()
     SetEntityHeading(PlayerPedId(), 21.0)
 
     local startCoords = {}
-    startCoords[0] = {x=2449.4045410156,y=4578.888671875,z=36.619812011719}
-    startCoords[1] = {x=2453.6677246094,y=4567.8295898438,z=36.619827270508}
-    startCoords[2] = {x=2457.8549804688,y=4556.904296875,z=36.619911193848}
-    startCoords[3] = {x=2461.9711914063,y=4546.1743164063,z=36.620677947998}
-    startCoords[4] = {x=2466.041015625,y=4535.576171875,z=36.620384216309}
-    startCoords[5] = {x=2470.3442382813,y=4524.365234375,z=36.620407104492}
-    startCoords[6] = {x=2474.5163574219,y=4513.4838867188,z=36.620929718018}
-    startCoords[7] = {x=2478.7651367188,y=4502.3452148438,z=36.619850158691}
-    startCoords[8] = {x=2457.6496582031,y=4576.0502929688,z=36.620639801025}
-    startCoords[9] = {x=2466.2487792969,y=4553.7958984375,z=36.620559692383}
-    startCoords[10] = {x=2470.1437988281,y=4542.8657226563,z=36.620262145996}
-    startCoords[11] = {x=2474.0251464844,y=4532.416015625,z=36.620483398438}
-    startCoords[12] = {x=2478.1882324219,y=4521.1723632813,z=36.620544433594}
-    startCoords[13] = {x=2482.703125,y=4510.228515625,z=36.620155334473}
-    startCoords[14] = {x=2487.2358398438,y=4499.3139648438,z=36.620792388916}
+    startCoords[0] = {x=2449.40,y=4578.88,z=36.61}
+    startCoords[1] = {x=2453.66,y=4567.82,z=36.61}
+    startCoords[2] = {x=2457.85,y=4556.90,z=36.61}
+    startCoords[3] = {x=2461.97,y=4546.17,z=36.62}
+    startCoords[4] = {x=2466.04,y=4535.57,z=36.62}
+    startCoords[5] = {x=2470.34,y=4524.36,z=36.62}
+    startCoords[6] = {x=2474.51,y=4513.48,z=36.62}
+    startCoords[7] = {x=2478.76,y=4502.34,z=36.61}
+    startCoords[8] = {x=2457.64,y=4576.05,z=36.62}
+    startCoords[9] = {x=2466.24,y=4553.79,z=36.62}
+    startCoords[10] = {x=2470.14,y=4542.86,z=36.62}
+    startCoords[11] = {x=2474.02,y=4532.41,z=36.62}
+    startCoords[12] = {x=2478.18,y=4521.17,z=36.62}
 
 
     SetPedCoordsKeepVehicle(PlayerPedId(), startCoords[PlayerId()].x, startCoords[PlayerId()].y, startPoint.z, true)
@@ -219,7 +189,7 @@ AddEventHandler("cRace:BeginRace", function(cP, cP2)
             SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
 
 
-            DrawHudText("You are in " .. position .. " place", {249, 249, 249,255},0.0,0.5,1.0,1.0)
+            DrawHudText("Position: " .. position .. " place", {249, 249, 249,255},0.0,0.5,1.0,1.0)
             DrawHudText(math.floor(GetDistanceBetweenCoords(CheckPoints[cP].x,  CheckPoints[cP].y,  CheckPoints[cP].z, GetEntityCoords(GetPlayerPed(-1)))) .. " meters", {249, 249, 249,255},0.0,0.75,1.0,1.0)
             DrawHudText(string.format("%i / %i", cP, tablelength(CheckPoints)), {249, 249, 249, 255},0.7,0.0,1.5,1.5)
             DrawHudText(formatTimer(startTime, GetGameTimer()), {249, 249, 249,255},0.0,0.0,1.5,1.5)
