@@ -109,7 +109,10 @@ AddEventHandler("cRace:JoinRace", function(host)
         function getcountdown()
           return math.floor((time-GetGameTimer())/1000)
         end
-        setcountdown(11)
+        setcountdown(10)
+	if GetDistanceBetweenCoords( startPoint.x, startPoint.y, startPoint.z, GetEntityCoords(LocalPed())) < 50.0 then
+	    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId()), true) --Freeze all players within 50m of the race startpoint
+	end
         
         while getcountdown() > 0 do
             Citizen.Wait(1)
@@ -171,6 +174,7 @@ Citizen.CreateThread(function()
             Citizen.Wait(1)
             DrawHudText(getcountdown(), {255,191,0,255},0.5,0.4,4.0,4.0)
         end
+	    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId()), false) --Unfreeze all players when the race starts
             TriggerEvent("cRace:BeginRace", 1, 2)
     end)
 end)
