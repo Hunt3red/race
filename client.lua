@@ -110,9 +110,6 @@ AddEventHandler("cRace:JoinRace", function(host)
           return math.floor((time-GetGameTimer())/1000)
         end
         setcountdown(10)
-	if GetDistanceBetweenCoords( startPoint.x, startPoint.y, startPoint.z, GetEntityCoords(LocalPed())) < 50.0 then
-	    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId()), true) --Freeze all players within 50m of the race startpoint
-	end
         
         while getcountdown() > 0 do
             Citizen.Wait(1)
@@ -162,6 +159,7 @@ AddEventHandler("cRace:PreRace", function()
 
 
     SetPedCoordsKeepVehicle(PlayerPedId(), startCoords[PlayerId()].x, startCoords[PlayerId()].y, startPoint.z, true)
+    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId(source)), true) --Freeze Entity that joins race
 
 end)
 
@@ -180,7 +178,7 @@ Citizen.CreateThread(function()
             Citizen.Wait(1)
             DrawHudText(getcountdown(), {255,191,0,255},0.5,0.4,4.0,4.0)
         end
-	    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId()), false) --Unfreeze all players when the race starts
+	    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId(source)), false) --Unfreeze Entities when starting race
             TriggerEvent("cRace:BeginRace", 1, 2)
     end)
 end)
@@ -259,7 +257,7 @@ end
 RegisterNetEvent("stopRace")
 AddEventHandler("stopRace", function()
     TriggerEvent("chatMessage", "Server", {0,0,0}, string.format("Race stopped"))
-    FreezeEntityPosition(GetVehiclePedIsUsing(GetPlayerPed(-1)), false) --Unfreeze Entity
+    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId(source)), false) --Unfreeze Entities when stopping a race
     setcountdown(0)
     PlaySoundFrontend(-1, "ScreenFlash", "WastedSounds")
     DeleteCheckpoint(checkpoint)
