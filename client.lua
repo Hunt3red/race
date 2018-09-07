@@ -256,16 +256,20 @@ end
 
 RegisterNetEvent("stopRace")
 AddEventHandler("stopRace", function()
-    TriggerEvent("chatMessage", "Server", {0,0,0}, string.format("Race stopped"))
-    FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId(source)), false) --Unfreeze Entities when stopping a race
-    setcountdown(0)
-    PlaySoundFrontend(-1, "ScreenFlash", "WastedSounds")
-    DeleteCheckpoint(checkpoint)
-    RemoveBlip(blip)
-    IsRacing = false
-    cP = 0
-    cP2 = 0
-    raceInit()
+    if IsRacing == true then
+	TriggerEvent("chatMessage", "Server", {0,0,0}, string.format("Race stopped"))
+    	FreezeEntityPosition(GetVehiclePedIsUsing(PlayerPedId(source)), false) --Unfreeze Entities when stopping a race
+    	setcountdown(0)
+    	PlaySoundFrontend(-1, "ScreenFlash", "WastedSounds")
+    	DeleteCheckpoint(checkpoint)
+    	RemoveBlip(blip)
+    	IsRacing = false
+    	cP = 0
+    	cP2 = 0
+    	raceInit()
+    else
+	return
+    end
 end)
 
 --utility funcs
